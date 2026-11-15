@@ -13,14 +13,14 @@
 
 Elastic Beanstalk is a powerful PaaS that runs your application and manages the servers, load balancer and health checks for you. This app ships as a Docker image on Docker Hub, so the only file you upload is `beanstalk/docker-compose.yml`. There is no ZIP and no Dockerfile to upload.
 
-The image is `trainwithshubham/e-commerce-python:1.1.0`. It is built for both linux/amd64 and linux/arm64, runs as a non-root user and listens on port 8080 inside the container. The compose file publishes it on port 80 of the instance. The app also has a `/health` route that returns `{"status":"ok"}`.
+The image is `theshantanu01/e-com-python:1.1.0`. It is built for both linux/amd64 and linux/arm64, runs as a non-root user and listens on port 8080 inside the container. The compose file publishes it on port 80 of the instance. The app also has a `/health` route that returns `{"status":"ok"}`.
 
 ### Steps
 
 1. Sign in to the AWS console, pick a region and open the Elastic Beanstalk service.
 2. Click Create environment.
 3. Choose the Web server environment and keep Standard as the configuration mode.
-4. Enter an application name such as `ecommerce-app`. The environment name and domain are filled in for you.
+4. Enter an application name such as `ecom-app`. The environment name and domain are filled in for you.
 5. Under Platform, choose Docker, with the platform branch Docker running on 64bit Amazon Linux 2023. Keep the recommended platform version.
 6. Under Application code, choose Upload your code and select Local file.
 7. Choose the file `beanstalk/docker-compose.yml` from this repo. Give it a version label like `v1`.
