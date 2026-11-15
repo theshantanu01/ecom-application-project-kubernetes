@@ -7,7 +7,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-# Run as a normal user. Ports below 1024 need root, so the app listens on 8080
 RUN useradd --create-home appuser
 USER appuser
 
