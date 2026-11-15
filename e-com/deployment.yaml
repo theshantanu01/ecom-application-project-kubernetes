@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecom-deployment
+  labels:
+    app: ecom
+  namespace: ecom-app  
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ecom-app
+  template:
+    metadata:
+      labels:
+        app: ecom-app
+    spec:
+      containers:
+      - name: ecom-app-project
+        image: shantdocker01/ecom-application01
+        ports:
+        - containerPort: 8000

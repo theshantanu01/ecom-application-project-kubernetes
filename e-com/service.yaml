@@ -1,0 +1,15 @@
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: ecom-svc
+  namespace: ecom-app
+spec:
+  selector:
+    app: ecom-app
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8080
+  type: ClusterIP
+
